@@ -7,6 +7,9 @@ module.exports = {
   ],
   theme: {
     extend: {
+      backgroundImage: {
+        custom_img:"url('../public/6560073.jpg')"
+      },
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
