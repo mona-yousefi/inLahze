@@ -2,11 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-@theme {
-  --color-section: #F3F6F5;
-  --color-tahiti: #3ab7bf;
-  --color-bermuda: #78dcca;
-}
 @font-face {
   font-family: OnNormal;
   src: url(./fonts/OnNormal.woff2);

@@ -1,8 +1,11 @@
 import React from 'react'
+import SignUpForm from '../components/SignUpForm/signUpForm'
 
 const SignUp = () => {
   return (
-    <div>SignUp</div>
+    <div className='bg-sign_up_image bg-cover'>
+      <SignUpForm/>
+    </div>
   )
 }
 
