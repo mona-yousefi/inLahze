@@ -3,23 +3,11 @@ import Link from 'next/link';
 import React, { useState } from 'react'
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
-import Example from '../Modal/page';
+import Modal from '../Modal/page';
 
 const SignUpForm = () => {
-    const [name, setName] = useState('');
-    const [familyName, setFamilyName] = useState('');
-    const [userName, setUserName] = useState('');
-    const [email, setEmail] = useState('');
-    const [phone, setPhone] = useState('');
-    const [password, setPassword] = useState('');
-    const [passwordAgain, setPasswordAgain] = useState('');
-    const [acceptTerms, setAcceptTerms] = useState('');
-    const handleSubmit = (e) => {
-      e.preventDefault();
-      // Handle form submission here
-      console.log('Name:', name);
-      console.log('FamilyName:', familyName);
-      console.log('UserName', userName);
+    const handleSubmit = (values) => {
+      console.log("Values", values);
     };
     const SignUpSchema = Yup.object().shape({
         name: Yup.string().required("وارد کردن نام الزامی است."),
@@ -33,16 +21,20 @@ const SignUpForm = () => {
           .max(50, 'Too Long!')
           .required("وارد کردن رمز عبور الزامی است."),
         passwordAgain: Yup.string()
-          .min(8, 'Too Short!')
-          .max(50, 'Too Long!')
-          .required("وارد کردن رمز عبور الزامی است."),
+        .oneOf([Yup.ref('password'), null], 'رمزهای عبور باید یکسان باشند')
+        .required("تکرار رمز عبور الزامی است"),
         checkbox:Yup.bool().oneOf([true], 'لازم است تا با شرایط موافقت کنید'),
       });
   return (
     <div className='flex justify-end px-20 py-10'>
       <Formik initialValues={{
+        name:'',
+        familyName:'',
+        userName:'',
+        phone:'',
         email:'',
         password:'',
+        passwordAgain:'',
         checkbox:''
       }}
       validationSchema={SignUpSchema}
@@ -89,7 +81,7 @@ const SignUpForm = () => {
            <div>
             <Field name="checkbox" type="checkbox"/>
             <p className='inline text-black text-lg'> پذیرش <Link href="/">شرایط و ضوابط</Link></p>
-            {errors.termsAndConditions && <p>{errors.termsAndConditions}</p>}
+            {errors.checkbox && <p>{errors.checkbox}</p>}
            </div>
            <button type="submit" className='w-full bg-green-300 rounded text-lg font-bold'>ثبت نام</button>
            <div className='flex gap-1'>

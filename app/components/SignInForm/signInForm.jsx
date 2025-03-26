@@ -5,15 +5,8 @@ import { Formik, Form, Field, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
 
 const SignInForm = () => {
-  // const [email, setEmail] = useState('');
-  // const [password, setPassword] = useState('');
-  // const [rememberMe, setRememberMe] = useState(false);
-  const handleSubmit = (e) => {
-      e.preventDefault();
-      // Handle form submission here
-      console.log('Email:', email);
-      console.log('Password:', password);
-      console.log('Remember Me:', rememberMe);
+  const handleSubmit = (values) => {
+      console.log('Values', values);
     };
   const SignInSchema = Yup.object().shape({
     email: Yup.string().email("invalid email")
