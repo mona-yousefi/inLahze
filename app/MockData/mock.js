@@ -27,5 +27,19 @@ export const mockProducts = [
       image: "/1723634786-hfYV7R28.jpg",
       price: 250000,
       description: 'Durable backpack with laptop compartment'
+    },
+    {
+      id: 5,
+      title: 'سه گانه شروع از نو',
+      image: "/1723634054-U1ke3TOf.jpg",
+      price: 150000,
+      description: 'Portable speaker with 20hr battery life'
+    },
+    {
+      id: 6,
+      title: 'تو از نو',
+      image: "/1723634786-hfYV7R28.jpg",
+      price: 250000,
+      description: 'Durable backpack with laptop compartment'
     }
   ];
