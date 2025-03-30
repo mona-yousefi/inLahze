@@ -51,8 +51,8 @@ const Navbar = () => {
       </div>
       <div className='order-3 flex gap-2 items-center justify-center sm:flex-row ml-5 md:mr-0'>
         <input type="text" placeholder='محصولات را جست و جو کنید...' className='w-48 mr-12 sm:w-30 text-sm p-2 border-2 h-10 border-neutral-950 md:w-44 lg:w-48'/>
-        <Link href="../sign-up"><button className='hidden sm:block font-bold text-base bg-green-100 px-2 rounded md:text-xl'>ثبت نام</button></Link>
-        <Link href="../sign-in"><button className='hidden sm:block font-bold text-base  bg-green-100 rounded px-2 md:text-xl'>ورود</button></Link>
+        <Link href="../sign-up"><button className='hidden sm:block font-bold text-base bg-productCard px-2 rounded md:text-xl'>ثبت نام</button></Link>
+        <Link href="../sign-in"><button className='hidden sm:block font-bold text-base  bg-productCard rounded px-2 md:text-xl'>ورود</button></Link>
       </div>
     </nav>
   )
