@@ -16,7 +16,9 @@ module.exports = {
         foreground: "var(--foreground)",
         primary: "#775177",
         secondary:'#ADAEA6',
-        signIn:"#818E98"
+        signIn:"#818E98",
+        product:"#132a13",
+        productCard:"#cce3de"
       },
     },
   },
