@@ -31,7 +31,7 @@ const Navbar = () => {
     <nav 
     className={`z-50 ${hasBackground ? 'bg-white shadow-md' : 'bg-transparent'} navbar flex fixed w-full justify-around items-center gap-0 md:flex-row scroll-smooth p-3 `}>
       <div className='order-last flex justify-center md:order-first bg-none'>
-        <Link href="/"><IoCartOutline className='text-xl text-center mt-3 mx-auto bg-white sm:text-2xl md:bg-transparent'/></Link>
+        <Link href="./cart"><IoCartOutline className='text-xl text-center mt-3 mx-auto bg-white sm:text-2xl md:bg-transparent'/></Link>
       </div>
       <div className='order-first relative mx-0 md:order-2 lg:mr-40'>
         <GiHamburgerMenu onClick={showMenu} className='mt-2 md:hidden relative'/>
