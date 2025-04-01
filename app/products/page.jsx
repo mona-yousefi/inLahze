@@ -5,6 +5,7 @@ import ProductCard from '../components/ProductCard/productCard';
 import { mockProducts } from '../MockData/mock';
 
 const ProductsPage = () => {
+  
   const [cart, setCart] = useState([]);
   const [notification, setNotification] = useState(null);
   const [query, setQuery] = useState('');
@@ -40,13 +41,13 @@ const ProductsPage = () => {
     <div className="container mx-auto px-4 py-8">
       <h1 className="text-3xl font-bold mb-8 mt-10">محصولات ما</h1>
       <form onSubmit={handleSubmit}>
-        <input type="text" value={query} className='mb-10 w-[40vw]' onChange={handleQuery}/>
-        <button className='bg-blue-400 mr-3 px-2' type='submit' >جست و جو</button>
+        <input type="text" value={query} className='mb-10 w-[40vw] px-3 border-2 border-stone-950' onChange={handleQuery} placeholder='محصول مورد نظر خود را جست و جو کنید'/>
+        <button className='bg-blue-400 mr-3 px-3 text-black font-bold rounded text-lg' type='submit' >جست و جو</button>
         {query && (
           <button 
             type="button" 
             onClick={resetFilter}
-            className="bg-blue-400 mr-3 px-2"
+            className="bg-blue-400 mr-3 px-3 text-black font-bold rounded text-lg"
           >
             نمایش همه
           </button>
@@ -58,7 +59,7 @@ const ProductsPage = () => {
         </div>
       )}
       
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-[1fr_1fr_minmax(150px,1fr)_minmax(200px,1fr)] gap-6 relative">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-[1fr_1fr_minmax(150px,1fr)_minmax(200px,1fr)] gap-6 relative mt-10">
         {filteredProducts.map((product) => (
           <div key={product.id}>
           <ProductCard 
@@ -81,21 +82,7 @@ const ProductsPage = () => {
         </div>
       )}
       </div>
-      <div className='bg-product rounded-3xl w-full h-[70vh] left-0 top-24 absolute skew-y-3 -z-10'></div>
-      <div className="mt-8 p-4 border-t">
-        <h2 className="text-xl font-semibold mb-4">Cart Items: {cart.length}</h2>
-        {cart.length > 0 ? (
-          <ul>
-            {cart.map((item, index) => (
-              <li key={index} className="mb-2">
-                {item.title} - ${item.price.toFixed(2)}
-              </li>
-            ))}
-          </ul>
-        ) : (
-          <p>Your cart is empty</p>
-        )}
-      </div>
+      <div className='bg-product rounded-3xl w-full h-[80vh] left-0 top-48 absolute skew-y-3 -z-10'></div>
     </div>
   );
 };
