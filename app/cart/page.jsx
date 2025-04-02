@@ -19,7 +19,7 @@ const Cart = () => {
       <div className="flex flex-col mt-12 justify-center w-[80vw] p-5 bg-gray-200">
         <div className="overflow-x-auto">
           {!cartItems.length ? (
-            <p className="text-center">Your cart is empty.</p>
+            <p className="text-center">سبد خرید شما خالی است.</p>
           ) : (
             <table className="table border-collapse w-full font-bold border-black box-border">
               <thead>
@@ -78,9 +78,9 @@ const Cart = () => {
         </div>
 
         <div className="flex flex-col gap-5 items-center">
-          <h6 className="mt-5">Order Summary</h6>
-          <div>Total: {total}</div>
-          <button className="bg-blue-300 px-3 py-2 rounded">Checkout </button>
+          <h6 className="mt-5">سفارشات شما</h6>
+          <div>مجموع: {total}</div>
+          <button className="bg-blue-300 px-3 py-2 rounded">تسویه حساب </button>
           <div>
           <Link href="./products" className="text-center bg-productCard p-4 font-bold rounded ">ادامه ی خرید</Link>
           </div>
