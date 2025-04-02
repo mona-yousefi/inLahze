@@ -40,7 +40,7 @@ const Cart = () => {
                       <p className="justify-self-center">{item.title}</p>
                       </div>
                     </td>
-                    <td className="text-center border p-2 border-black ">{item.price}</td>
+                    <td className="text-center border p-2 border-black ">{item.price} تومان</td>
                     <td className="border border-black p-2 text-center align-middle">
                       <div className="flex items-center justify-center gap-2 h-full">
                       <button 
@@ -60,7 +60,7 @@ const Cart = () => {
                       </button>
                       </div>
                     </td>
-                    <td className="text-center border border-black">{(item.price * item.quantity)}</td>
+                    <td className="text-center border border-black">{(item.price * item.quantity)} تومان</td>
                     <td className="text-center border border-black">
                       <button
                         onClick={() =>
@@ -79,10 +79,10 @@ const Cart = () => {
 
         <div className="flex flex-col gap-5 items-center">
           <h6 className="mt-5">سفارشات شما</h6>
-          <div>مجموع: {total}</div>
+          <div>مجموع: {total} تومان</div>
           <button className="bg-blue-300 px-3 py-2 rounded">تسویه حساب </button>
           <div>
-          <Link href="./products" className="text-center bg-productCard p-4 font-bold rounded ">ادامه ی خرید</Link>
+          <Link href="/products" className="text-center bg-productCard p-4 font-bold rounded ">ادامه ی خرید</Link>
           </div>
         </div>
         
