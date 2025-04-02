@@ -43,7 +43,7 @@ const SignInForm = () => {
       setError(err.message);
       console.error('Registration error:', err);
     } finally {
-      setIsSubmitting(false);
+      setIsLogging(false);
     }
   };
 
@@ -59,12 +59,15 @@ const SignInForm = () => {
 
   if(success){
     return (
-      <div className="flex justify-center items-center h-screen">
+      <div>
+        <Modal/>
+          <div className="flex justify-center items-center h-screen">
         <div className="bg-white p-8 rounded shadow-lg text-center">
           <h2 className="text-2xl font-bold mb-4">ورود موفقیت آمیز بود!</h2>
           <Link href="/sign-in" className="text-blue-500 hover:underline">
             ورود به حساب کاربری
           </Link>
+        </div>
         </div>
       </div>
     );
@@ -106,7 +109,7 @@ const SignInForm = () => {
             <Link href="/" className='text-black text-lg'>رمز عبور خود را فراموش کرده اید؟
             </Link>
           </div>
-           <button type="submit" disabled={isLogging} className='w-full bg-green-300 rounded text-lg font-bold'>{isLogging ? "در حال ورود": "ورود به حساب کاربری"}</button>
+           <button type="submit" disabled={isLogging} className={`w-full bg-green-300 rounded text-lg font-bold p-2 ${isLogging ? 'opacity-50' : ''}`}>{isLogging ? "در حال ورود": "ورود به حساب کاربری"}</button>
            <div className='flex gap-1'>
             <p className='text-black'>حساب کاربری ندارید؟</p>
             <Link href="/sign-up" className='inline-block underline underline-offset-4 text-black'>ثبت نام کنید</Link>
