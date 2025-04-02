@@ -17,7 +17,7 @@ const ProductCard = ({ product, onAddToCart }) => {
         </div>
         <div className='w-full flex justify-between gap-2 py-2 px-3 items-center'>
           <button className="bg-blue-500 w-[50%] rounded hover:bg-blue-700 transition-colors block text-center text-white text-base py-2 px-1">
-            <Link href="./" >
+            <Link href={`../../products/${product.id}`} >
             مشاهده محصول
             </Link>
         </button>
