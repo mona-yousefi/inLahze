@@ -16,11 +16,15 @@ const SignInForm = () => {
       console.log('Values', values);
       try {
         const response=await fetch('https://tlb.pythonanywhere.com/api/account/login/',{
-          method:'GET',
+          method:'POST',
           headers:{
             'Content-Type':'application/json',
             'Accept':'application/json'
-          }
+          },
+          body: JSON.stringify({
+            email_or_phone_or_username: values.email || values.phone || values.userName,
+            password: values.password,
+          })
         })
         const contentType = response.headers.get('content-type');
         if (!contentType || !contentType.includes('application/json')) {
@@ -48,7 +52,7 @@ const SignInForm = () => {
   };
 
   const SignInSchema = Yup.object().shape({
-    email: Yup.string().email("invalid email")
+    email: Yup.string()
       .required("وارد کردن ایمیل الزامی است."),
     password: Yup.string()
       .min(8, 'Too Short!')
