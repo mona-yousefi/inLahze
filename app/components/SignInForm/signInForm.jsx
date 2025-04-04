@@ -3,7 +3,6 @@ import Link from 'next/link';
 import React, { use, useState } from 'react'
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
-import Modal from '../Modal/page';
 
 const SignInForm = () => {
   const [isLogging,setIsLogging]=useState(false)
@@ -16,11 +15,15 @@ const SignInForm = () => {
       console.log('Values', values);
       try {
         const response=await fetch('https://tlb.pythonanywhere.com/api/account/login/',{
-          method:'GET',
+          method:'POST',
           headers:{
             'Content-Type':'application/json',
             'Accept':'application/json'
-          }
+          },
+          body: JSON.stringify({
+            email_or_phone_or_username: values.email || values.phone || values.userName,
+            password: values.password,
+          })
         })
         const contentType = response.headers.get('content-type');
         if (!contentType || !contentType.includes('application/json')) {
@@ -48,7 +51,7 @@ const SignInForm = () => {
   };
 
   const SignInSchema = Yup.object().shape({
-    email: Yup.string().email("invalid email")
+    email: Yup.string()
       .required("وارد کردن ایمیل الزامی است."),
     password: Yup.string()
       .min(8, 'Too Short!')
@@ -60,7 +63,6 @@ const SignInForm = () => {
   if(success){
     return (
       <div>
-        <Modal/>
           <div className="flex justify-center items-center h-screen">
         <div className="bg-white p-8 rounded shadow-lg text-center">
           <h2 className="text-2xl font-bold mb-4">ورود موفقیت آمیز بود!</h2>
