@@ -13,6 +13,18 @@ const SignInForm = () => {
       setIsLogging(true)
       setError(null);
       console.log('Values', values);
+      console.log('Sending:', {
+        url: 'https://tlb.pythonanywhere.com/api/account/signup/',
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        },
+        body: {
+          email: values.email,
+          password: values.password,
+        }
+      });
       try {
         const response=await fetch('https://tlb.pythonanywhere.com/api/account/login/',{
           mode:'no-cors',
