@@ -114,7 +114,7 @@ const SignUpForm = () => {
         onSubmit={handleSubmit}
       >
         {({ errors, touched }) => (
-          <Form  method="POST" className='w-full mb-10 sm:w-[50vw] bg-signIn bg-opacity-70 rounded-md flex flex-col gap-5 p-7 backdrop-blur-sm mt-40 md:w-[50vw] lg:w-[30vw]'>
+          <Form  method="POST" className='w-full mb-10 sm:w-[50vw] bg-signIn bg-opacity-70 rounded-md flex flex-col gap-3 p-7 backdrop-blur-sm mt-24 md:w-[50vw] lg:w-[30vw]'>
             <h1 className='text-2xl text-center text-sl font-bold text-black'>ثبت نام</h1>
             
             {error && (

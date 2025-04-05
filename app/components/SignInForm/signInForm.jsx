@@ -52,7 +52,7 @@ const SignInForm = () => {
 
   const SignInSchema = Yup.object().shape({
     email: Yup.string()
-      .required("وارد کردن ایمیل الزامی است."),
+      .required("وارد کردن ایمیل یا شماره تماس و یا نام کاربری الزامی است."),
     password: Yup.string()
       .min(8, 'Too Short!')
       .max(50, 'Too Long!')
@@ -66,8 +66,8 @@ const SignInForm = () => {
           <div className="flex justify-center items-center h-screen">
         <div className="bg-white p-8 rounded shadow-lg text-center">
           <h2 className="text-2xl font-bold mb-4">ورود موفقیت آمیز بود!</h2>
-          <Link href="/sign-in" className="text-blue-500 hover:underline">
-            ورود به حساب کاربری
+          <Link href="/" className="text-blue-500 hover:underline">
+            ورود به صفحه اصلی
           </Link>
         </div>
         </div>
@@ -93,7 +93,7 @@ const SignInForm = () => {
               </div>
             )}
           <div className='w-full'>
-            <label htmlFor="email" className='text-xl text-black font-bold'>ایمیل</label>
+            <label htmlFor="email" className='text-xl text-black font-bold'>ایمیل/شماره تماس/نام کاربری</label>
            <Field name="email" className={`w-full p-2 border rounded ${errors.name && touched.name ? 'border-red-500' : ''}`} id="email"/>
            <ErrorMessage name="email" component="div" className="text-red-700 font-bold" />
            </div>
