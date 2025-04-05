@@ -17,6 +17,7 @@ const SignUpForm = () => {
     
     try {
       const response = await fetch('https://tlb.pythonanywhere.com/api/account/signup/', {
+        mode: 'no-cors',
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

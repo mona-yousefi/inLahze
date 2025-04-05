@@ -15,6 +15,7 @@ const SignInForm = () => {
       console.log('Values', values);
       try {
         const response=await fetch('https://tlb.pythonanywhere.com/api/account/login/',{
+          mode:'no-cors',
           method:'POST',
           headers:{
             'Content-Type':'application/json',
