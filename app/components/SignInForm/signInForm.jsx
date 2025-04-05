@@ -21,15 +21,8 @@ const SignInForm = () => {
           'Accept': 'application/json'
         },
         body: {
-<<<<<<< HEAD
           email: values.email,
           password: values.password,
-=======
-          username: values.username,
-          email: values.email,
-          password: values.password,
-          password_confirmation: values.confirm_password
->>>>>>> 02aeb5b903ea328d971d659f24ae4e013a96cbf1
         }
       });
       try {
