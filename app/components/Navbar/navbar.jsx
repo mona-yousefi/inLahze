@@ -3,7 +3,9 @@ import React, { useEffect, useState } from 'react'
 import { IoCartOutline } from "react-icons/io5";
 import { GiHamburgerMenu } from "react-icons/gi";
 import Link from 'next/link';
+import { useSelector } from 'react-redux';
 const Navbar = () => {
+  const cartItems = useSelector((state) => state.cart);
   const [isOpen,setIsOpen]=useState(false)
   const showMenu=()=>{
    setIsOpen(!isOpen)
@@ -31,7 +33,12 @@ const Navbar = () => {
     <nav 
     className={`z-50 ${hasBackground ? 'bg-white shadow-md' : 'bg-transparent'} navbar flex fixed w-full justify-around items-center gap-0 md:flex-row scroll-smooth p-3 `}>
       <div className='order-last flex justify-center md:order-first bg-none'>
-        <Link href="/cart"><IoCartOutline className='text-xl text-center mt-3 mx-auto bg-white sm:text-2xl md:bg-transparent'/></Link>
+        <Link href="/cart">
+        <div className='relative flex items-center justify-center w-10 h-10 md:w-15 h-15'>
+          <IoCartOutline className='text-xl text-center mt-3 mx-auto bg-white sm:text-2xl md:bg-transparent md:text-3xl'/>
+          <span className='absolute flex items-center justify-center p-0.5 top-5 right-2 w-3 h-3 bg-red-500 rounded-[50%] text-center text-sm text-white font-bold'>{cartItems?.length}</span>
+        </div>
+        </Link>
       </div>
       <div className='order-first relative mx-0 md:order-2 lg:mr-40'>
         <GiHamburgerMenu onClick={showMenu} className='mt-2 md:hidden relative'/>
