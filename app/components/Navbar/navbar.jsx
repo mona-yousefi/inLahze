@@ -49,6 +49,7 @@ const Navbar = () => {
         
         {isOpen && (
           <ul className="ml-10 flex flex-col absolute z-1000 bg-gray-400 top-0 right-5 w-30">
+            <li onClick={closeMenu}><Link href="/" className="font-bold text-2xl p-3 block">صفحه اصلی</Link></li>
             <li onClick={closeMenu}><Link href="/products" className="font-bold text-2xl p-3 block">محصولات</Link></li>
             <li onClick={closeMenu}><Link href="/offers" className="font-bold text-2xl p-3 block">خدمات</Link></li>
             <li onClick={closeMenu}><Link href="/about-us" className="font-bold text-2xl p-3 block">درباره ما</Link></li>
@@ -60,6 +61,7 @@ const Navbar = () => {
 
         {/* Desktop Menu (unchanged) */}
         <ul className='hidden md:flex justify-center gap-1 ml-20 lg:gap-3'>
+          <Link href="/"><li className="font-bold text-base p-1 md:text-2xl">صفحه اصلی</li></Link>
           <Link href="/products"><li className="font-bold text-base p-1 md:text-2xl">محصولات</li></Link>
           <Link href="/offers"><li className="font-bold text-base p-1 md:text-2xl">خدمات</li></Link>
           <Link href="/about-us"><li className="font-bold text-base p-1 md:text-2xl">درباره ما</li></Link>
