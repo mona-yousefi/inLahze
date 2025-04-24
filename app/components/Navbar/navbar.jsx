@@ -48,7 +48,7 @@ const Navbar = () => {
         <Link href="/about-us"><li className="font-bold text-2xl p-3">درباره ما</li></Link>
         <Link href="/support"><li className="font-bold text-2xl p-3">حمایت مالی</li></Link>
         <Link href="/../sign-in"><li className="font-bold text-2xl p-3">ورود</li></Link>
-        <Link href="/support"><li className="font-bold text-2xl p-3">ثبت نام</li></Link>
+        <Link href="../sign-up"><li className="font-bold text-2xl p-3">ثبت نام</li></Link>
         </ul> : <ul  className=' hidden md:flex justify-center gap-1 lg:gap-3' >
         <Link href="/products"><li className="font-bold text-base p-1 md:text-2xl">محصولات</li></Link>
         <Link href="/offers"><li className="font-bold text-base p-1 md:text-2xl">خدمات</li></Link>
