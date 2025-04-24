@@ -75,7 +75,7 @@ const Cart = () => {
               </tbody>
             </table>
           )}
-              <div className="w-full flex items-center justify-between px-5  box-border">
+          {cartItems.length ? (<div className="w-full flex items-center justify-between px-5  box-border">
                 {/* order and total which are flex-col */}
                 <div className="flex flex-col w-[30%]">
                   <h6 className="mt-5 font-bold text-lg">سفارشات شما</h6>
@@ -98,7 +98,8 @@ const Cart = () => {
                   <button className="bg-blue-300 px-3 py-2 rounded font-bold mb-2 w-full text-xl">تسویه حساب </button>
                   <Link href="/products" className="text-center bg-productCard px-4 py-2 font-bold rounded w-full text-xl">ادامه ی خرید</Link>
                 </div>
-              </div>
+              </div>) : null}
+              
          </div>
       </div>
     </div>
