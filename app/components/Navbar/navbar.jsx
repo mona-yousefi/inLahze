@@ -1,5 +1,5 @@
 'use client'
-import React, { useEffect, useState } from 'react'
+import React, { use, useEffect, useRef, useState } from 'react'
 import { IoCartOutline } from "react-icons/io5";
 import { GiHamburgerMenu } from "react-icons/gi";
 import Link from 'next/link';
@@ -9,11 +9,13 @@ const Navbar = () => {
   const cartItems = useSelector((state) => state.cart);
   const [isOpen, setIsOpen] = useState(false);
   const [hasBackground, setHasBackground] = useState(false);
+  const menuRef=useRef(null);
 
+  
   const showMenu = () => {
     setIsOpen(!isOpen);
   };
-
+  
   // Close menu when clicking any link
   const closeMenu = () => {
     setIsOpen(false);
@@ -29,13 +31,26 @@ const Navbar = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (menuRef.current && !menuRef.current.contains(event.target)) {
+        setIsOpen(false);
+      }
+    };
+
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  })
+
   return (
     <nav className={`z-50 ${hasBackground ? 'bg-white shadow-md' : 'bg-transparent'} navbar flex fixed w-full justify-around items-center gap-0 md:flex-row scroll-smooth p-3`}>
       {/* Cart Icon (unchanged) */}
       <div className='order-last flex justify-center md:order-first bg-none'>
         <Link href="/cart">
           <div className='relative flex items-center justify-center w-10 h-10 md:w-15 h-15'>
-            <IoCartOutline className='text-xl text-center mt-3 mx-auto bg-white p-1 sm:text-2xl md:bg-transparent md:text-3xl'/>
+            <IoCartOutline className='text-2xl text-center mt-3 mx-auto bg-white p-1 sm:text-2xl md:bg-transparent md:text-3xl'/>
             <span className='absolute flex items-center justify-center p-0.5 top-5 right-2 w-3 h-3 bg-red-500 rounded-[50%] text-center text-sm text-white font-bold'>
               {cartItems?.length}
             </span>
@@ -44,8 +59,8 @@ const Navbar = () => {
       </div>
 
       {/* Mobile Menu */}
-      <div className='order-first relative mx-0 md:order-2 lg:mr-40'>
-        <GiHamburgerMenu onClick={showMenu} className='mt-2 bg-white p-1 md:hidden relative'/>
+      <div className='order-first relative mx-0 md:order-2 lg:mr-40' ref={menuRef}>
+        <GiHamburgerMenu onClick={showMenu} className='text-2xl mt-2 bg-white p-1 md:hidden relative'/>
         
         {isOpen && (
           <ul className="ml-10 flex flex-col absolute z-1000 bg-gray-300 top-0 right-5 w-36">
