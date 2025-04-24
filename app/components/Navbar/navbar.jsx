@@ -35,7 +35,7 @@ const Navbar = () => {
       <div className='order-last flex justify-center md:order-first bg-none'>
         <Link href="/cart">
           <div className='relative flex items-center justify-center w-10 h-10 md:w-15 h-15'>
-            <IoCartOutline className='text-xl text-center mt-3 mx-auto bg-white sm:text-2xl md:bg-transparent md:text-3xl'/>
+            <IoCartOutline className='text-xl text-center mt-3 mx-auto bg-white p-1 sm:text-2xl md:bg-transparent md:text-3xl'/>
             <span className='absolute flex items-center justify-center p-0.5 top-5 right-2 w-3 h-3 bg-red-500 rounded-[50%] text-center text-sm text-white font-bold'>
               {cartItems?.length}
             </span>
@@ -45,7 +45,7 @@ const Navbar = () => {
 
       {/* Mobile Menu */}
       <div className='order-first relative mx-0 md:order-2 lg:mr-40'>
-        <GiHamburgerMenu onClick={showMenu} className='mt-2 md:hidden relative'/>
+        <GiHamburgerMenu onClick={showMenu} className='mt-2 bg-white p-1 md:hidden relative'/>
         
         {isOpen && (
           <ul className="ml-10 flex flex-col absolute z-1000 bg-gray-400 top-0 right-5 w-30">
