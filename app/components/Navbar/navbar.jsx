@@ -48,7 +48,7 @@ const Navbar = () => {
         <GiHamburgerMenu onClick={showMenu} className='mt-2 bg-white p-1 md:hidden relative'/>
         
         {isOpen && (
-          <ul className="ml-10 flex flex-col absolute z-1000 bg-gray-400 top-0 right-5 w-30">
+          <ul className="ml-10 flex flex-col absolute z-1000 bg-gray-300 top-0 right-5 w-36">
             <li onClick={closeMenu}><Link href="/" className="font-bold text-2xl p-3 block">صفحه اصلی</Link></li>
             <li onClick={closeMenu}><Link href="/products" className="font-bold text-2xl p-3 block">محصولات</Link></li>
             <li onClick={closeMenu}><Link href="/offers" className="font-bold text-2xl p-3 block">خدمات</Link></li>
