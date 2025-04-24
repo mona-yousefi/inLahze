@@ -98,7 +98,7 @@ const SignInForm = () => {
       onSubmit={handleSubmit}
       >
         {({ errors, touched }) => (
-         <Form className='w-full sm:w-[30vw] bg-signIn bg-opacity-70 rounded-md flex flex-col gap-5 p-7 backdrop-blur-sm mt-40'>
+         <Form className='w-full sm:w-[60vw] bg-signIn bg-opacity-70 rounded-md flex flex-col gap-5 p-7 backdrop-blur-sm mt-40'>
           <h1 className='text-2xl text-center text-sl font-bold text-black'>ورود به حساب کاربری</h1>
           {error && (
               <div className="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative">
@@ -106,12 +106,12 @@ const SignInForm = () => {
               </div>
             )}
           <div className='w-full'>
-            <label htmlFor="email" className='text-xl text-black font-bold'>ایمیل/شماره تماس/نام کاربری</label>
+            <label htmlFor="email" className='text-base md:text-xl text-black font-bold'>ایمیل/شماره تماس/نام کاربری</label>
            <Field name="email" className={`w-full p-2 border rounded ${errors.name && touched.name ? 'border-red-500' : ''}`} id="email"/>
            <ErrorMessage name="email" component="div" className="text-red-700 font-bold" />
            </div>
           <div>
-            <label htmlFor="password" className='text-xl text-black font-bold'>رمز ورود</label>
+            <label htmlFor="password" className='text-base md:text-xl text-black font-bold'>رمز ورود</label>
             <Field name="password" className={`w-full p-2 border rounded ${errors.name && touched.name ? 'border-red-500' : ''}`} id="password" type="password" />
             <ErrorMessage name="password" component="div" className="text-red-700 font-bold" />
            </div>

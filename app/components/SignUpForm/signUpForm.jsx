@@ -99,7 +99,7 @@ const SignUpForm = () => {
   }
 
   return (
-    <div className='flex justify-end px-20 py-10'>
+    <div className='flex justify-end px-20 py-10 w-full'>
       <Formik 
         initialValues={{
           name: '',
@@ -125,7 +125,7 @@ const SignUpForm = () => {
             )}
 
             <div className='w-full'>
-              <label htmlFor="name" className='text-xl text-black font-bold'>نام</label>
+              <label htmlFor="name" className='text-base md:text-xl text-black font-bold'>نام</label>
               <Field 
                 name="name" 
                 className={`w-full p-2 border rounded ${errors.name && touched.name ? 'border-red-500' : ''}`} 
@@ -134,27 +134,27 @@ const SignUpForm = () => {
               <ErrorMessage name="name" component="div" className="text-red-400 font-bold" />
             </div>
             <div>
-             <label htmlFor="familyName" className='text-xl text-black font-bold'>نام خانوادگی</label>
+             <label htmlFor="familyName" className=' text-base md:text-xl text-black font-bold'>نام خانوادگی</label>
              <Field name="familyName" className={`w-full p-2 border rounded ${errors.name && touched.name ? 'border-red-500' : ''}`} id="familyName" type="text" />
              <ErrorMessage name="familyName" component="div" className="text-red-400 font-bold" />
             </div>
            <div>
-             <label htmlFor="userName" className='text-xl text-black font-bold'>نام کاربری</label>
+             <label htmlFor="userName" className='text-base md:text-xl text-black font-bold'>نام کاربری</label>
              <Field name="userName" className={`w-full p-2 border rounded ${errors.name && touched.name ? 'border-red-500' : ''}`} id="userName" type="text"/>
             <ErrorMessage name="userName" component="div" className="text-red-400 font-bold" />
            </div>
            <div>
-             <label htmlFor="email" className='text-xl text-black font-bold'>ایمیل</label>
+             <label htmlFor="email" className='text-base md:text-xl text-black font-bold'>ایمیل</label>
              <Field name="email" className={`w-full p-2 border rounded ${errors.name && touched.name ? 'border-red-500' : ''}`} id="email" type="text"/>
             <ErrorMessage name="email" component="div" className="text-red-400 font-bold" />
            </div>
           <div>
-             <label htmlFor="phone" className='text-xl text-black font-bold'>شماره تماس</label>
+             <label htmlFor="phone" className='text-base md:text-xl text-black font-bold'>شماره تماس</label>
              <Field name="phone" className={`w-full p-2 border rounded ${errors.name && touched.name ? 'border-red-500' : ''}`} id="phone" type="tel"/>
              <ErrorMessage name="phone" component="div" className="text-red-400 font-bold" />
            </div>
             <div>
-              <label htmlFor="password" className='text-xl text-black font-bold'>رمز عبور</label>
+              <label htmlFor="password" className='text-base md:text-xl text-black font-bold'>رمز عبور</label>
               <Field 
                 name="password" 
                 type="password"
@@ -165,7 +165,7 @@ const SignUpForm = () => {
             </div>
 
             <div>
-              <label htmlFor="confirm_password" className='text-xl text-black font-bold'>تکرار رمز عبور</label>
+              <label htmlFor="confirm_password" className='text-base md:text-xl text-black font-bold'>تکرار رمز عبور</label>
               <Field 
                 name="confirm_password" 
                 type="password"
